@@ -1,0 +1,10 @@
+# Default folders
+.idea/
+.vscode/
+.DS_Store
+
+# service
+bin/
+
+# storage
+storage/
