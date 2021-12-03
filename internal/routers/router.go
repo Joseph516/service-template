@@ -12,6 +12,10 @@ func NewRouters() *gin.Engine {
 	r := gin.New()
 
 	/* 中间件设置 */
+	// By default gin.DefaultWriter = os.Stdout
+	r.Use(gin.Logger())
+	// Recovery middleware recovers from any panics and writes a 500 if there was one.
+	r.Use(gin.Recovery())
 	// 跨域问题
 	r.Use(middleware.Cors())
 

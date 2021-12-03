@@ -22,6 +22,9 @@ func init() {
 
 func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
+	if global.ServerSetting.RunMode == "release" {
+		gin.DisableConsoleColor()
+	}
 	router := routers.NewRouters()
 	s := &http.Server{
 		Addr:    ":8080",
